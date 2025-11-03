@@ -1,0 +1,13 @@
+ use mashupdb
+ db.students.insertMany([
+  { _id: 1, name: "Arun", mark: 85, grade: "A" },
+  { _id: 2, name: "Beena", mark: 78, grade: "B" },
+  { _id: 3, name: "Charles", mark: 92, grade: "A+" },
+  { _id: 4, name: "Divya", mark: 67, grade: "C" },
+  { _id: 5, name: "Esha", mark: 88, grade: "A" }
+]);
+db.students.createIndex({mark:1})
+db.students.getIndexes()
+db.students.dropIndex({mark:1})
+db.students.getIndexes()
+"C:\Users\lizak\Downloads\mongodb-database-tools-windows-x86_64-100.13.0\mongodb-database-tools-windows-x86_64-100.13.0\bin\mongoexport.exe" --db mashupdb --collection students --limit 3 --sort "{_id:1}" --out "C:\Users\lizak\OneDrive\Desktop\sorted3.json"
