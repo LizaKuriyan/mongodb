@@ -1,0 +1,8 @@
+use mashupdb
+db.students.find().pretty()
+
+mongoexport --db mashupdb --collection students --out students.json
+mongoexport --db mashupdb --collection students --type csv --fields _id,name,mark --out stud.csv
+mongoexport --db mashupdb --collection students --limit 4 --out 4students.json
+mongoexport --db mashupdb --collection students --limit 3 --sort {_id:1} --out 3students.json
+mongoexport --db mashupdb --collection students --limit 3 --skip 2 --sort {_id:1} --out skipstudents.json
